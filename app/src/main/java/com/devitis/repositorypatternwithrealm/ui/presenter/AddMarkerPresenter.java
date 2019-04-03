@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.devitis.repositorypatternwithrealm.R;
 import com.devitis.repositorypatternwithrealm.data.model.Marker;
+import com.devitis.repositorypatternwithrealm.data.repository.IMainRepository;
 import com.devitis.repositorypatternwithrealm.data.repository.MarkerRepository;
 import com.devitis.repositorypatternwithrealm.data.utils.StringUtils;
 import com.devitis.repositorypatternwithrealm.ui.add.AddMarkerView;
@@ -17,12 +18,14 @@ import io.reactivex.observers.DisposableObserver;
 public class AddMarkerPresenter {
 
     private AddMarkerView view;
-    private MarkerRepository repository;
+    private IMainRepository repository;
 
-    public AddMarkerPresenter(AddMarkerView view, MarkerRepository repository) {
+    public AddMarkerPresenter(IMainRepository repository, AddMarkerView view) {
         this.view = view;
         this.repository = repository;
     }
+
+
 
     public void createNewMarker() {
         Marker marker = view.createMarkerFromViews();

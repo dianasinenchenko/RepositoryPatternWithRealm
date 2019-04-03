@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.devitis.repositorypatternwithrealm.data.model.Marker;
+import com.devitis.repositorypatternwithrealm.data.repository.IMainRepository;
 import com.devitis.repositorypatternwithrealm.data.repository.MarkerRepository;
 import com.devitis.repositorypatternwithrealm.data.utils.CollectionUtils;
 import com.devitis.repositorypatternwithrealm.ui.main.MainView;
@@ -18,13 +19,15 @@ import io.reactivex.observers.DisposableObserver;
 
 public class MainPresenter {
 
-    private MarkerRepository repository;
+    private IMainRepository repository;
     private MainView view;
 
-    public MainPresenter(MarkerRepository repository, MainView view) {
+    public MainPresenter(IMainRepository repository, MainView view) {
         this.repository = repository;
         this.view = view;
     }
+
+
 
     public void init() {
         view.init(new OnItemClick());
