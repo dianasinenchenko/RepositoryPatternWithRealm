@@ -10,7 +10,8 @@ import android.support.annotation.Nullable;
 public final class StringUtils {
 
     public static final String NULL_STRING = "";
-
+    public static final int INT_TEN = 10;
+    public static final String ZERO_STRING = "0";
     @NonNull
     public static String changeNullToNullString(@Nullable String nulll) {
         return nulll == null ? NULL_STRING : nulll;
@@ -20,4 +21,15 @@ public final class StringUtils {
         return text == null || text.isEmpty();
     }
 
+
+    @NonNull
+    public static String addZeroToStart(int number) {
+        String formatNumber;
+        if (number < INT_TEN) {
+            formatNumber = ZERO_STRING + number;
+        } else {
+            formatNumber = number + NULL_STRING;
+        }
+        return formatNumber;
+    }
 }
