@@ -16,11 +16,11 @@ public interface IMainRepository {
 
     Marker getMarkerById(int id);
 
-    List<Marker> getMarkerByName(@NonNull Marker name);
+    List<Marker> getMarkerByName(@NonNull String name);
 
-    List<Marker> getMarkerByEndDate(@NonNull Marker endDate);
+    List<Marker> getMarkerByEndDate(@NonNull String endDate);
 
-    List<Marker> getMarkerByLocation(@NonNull Marker location);
+    List<Marker> getMarkerByLocation(@NonNull String location);
 
     void createMarker(@NonNull Marker marker);
 
