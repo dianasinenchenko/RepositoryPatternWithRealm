@@ -11,6 +11,7 @@ import com.devitis.repositorypatternwithrealm.data.converter.RealmModelMarkerCon
 import com.devitis.repositorypatternwithrealm.data.realm.RealmMarker;
 import com.devitis.repositorypatternwithrealm.data.repository.IMainRepository;
 import com.devitis.repositorypatternwithrealm.data.repository.MarkerRepository;
+import com.devitis.repositorypatternwithrealm.data.sourse.MarkerDataSource;
 import com.devitis.repositorypatternwithrealm.ui.presenter.MainPresenter;
 
 import butterknife.BindView;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        IMainRepository repository = new MarkerRepository(new MarkerRepository(RealmMarker.class), new RealmModelMarkerConverter());
+        IMainRepository repository = new MarkerRepository(new MarkerDataSource(RealmMarker.class), new RealmModelMarkerConverter());
         presenter = new MainPresenter(repository, new MainView(this));
         presenter.init();
         searchText.addTextChangedListener(new TextWatcher() {

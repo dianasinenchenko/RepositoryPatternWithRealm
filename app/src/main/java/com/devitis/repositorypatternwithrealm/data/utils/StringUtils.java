@@ -15,4 +15,9 @@ public final class StringUtils {
     public static String changeNullToNullString(@Nullable String nulll) {
         return nulll == null ? NULL_STRING : nulll;
     }
+
+    public static boolean isEmpty(@Nullable String text) {
+        return text == null || text.isEmpty();
+    }
+
 }

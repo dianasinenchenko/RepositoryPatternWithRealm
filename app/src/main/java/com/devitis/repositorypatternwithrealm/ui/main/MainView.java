@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.devitis.repositorypatternwithrealm.R;
 import com.devitis.repositorypatternwithrealm.data.model.Marker;
+import com.devitis.repositorypatternwithrealm.ui.adapter.MarkerAdapter;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class MainView extends ActivityView<MainActivity> {
     public void init(@NonNull DisposableObserver<Marker> observer) {
         if (getActivity() != null) {
             adapter = new MarkerAdapter(getContext());
-            adapter.suscribeToAdapter(observer);
+            adapter.subscribeToAdapter(observer);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setAdapter(adapter);
         }
@@ -40,7 +41,7 @@ public class MainView extends ActivityView<MainActivity> {
 
 
     public void unsuscribeToAdapter() {
-        adapter.unsuscribeToAdapter();
+        adapter.unSubscribeToAdapter();
     }
 
     public void addMarker(Marker marker) {
