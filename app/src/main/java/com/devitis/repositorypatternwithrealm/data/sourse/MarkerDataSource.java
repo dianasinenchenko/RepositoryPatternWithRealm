@@ -77,6 +77,16 @@ public class MarkerDataSource extends MainDataSource<RealmMarker> implements IMa
                 .findAll();
     }
 
+    @Override
+    public RealmResults<RealmMarker> getMarkerByEndDate(@NonNull Realm realm, @NonNull String markerEndDate) {
+        return null;
+    }
+
+    @Override
+    public RealmResults<RealmMarker> getMarkerByLocation(@NonNull Realm realm, @NonNull String markerLocation) {
+        return null;
+    }
+
     @Nullable
     @Override
     protected String getPrimaryKey() {
