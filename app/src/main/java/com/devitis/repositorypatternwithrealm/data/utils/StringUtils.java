@@ -12,6 +12,7 @@ import java.util.Date;
 
 public final class StringUtils {
 
+
     public static final String NULL_STRING = "";
     public static final int INT_TEN = 10;
     public static final String ZERO_STRING = "0";
@@ -30,16 +31,8 @@ public final class StringUtils {
     }
 
 
-    @NonNull
-    public static String addZeroToStart(int number) {
-        String formatNumber;
-        if (number < INT_TEN) {
-            formatNumber = ZERO_STRING + number;
-        } else {
-            formatNumber = number + NULL_STRING;
-        }
-        return formatNumber;
-    }
+
+
 
     public static String formatDateWithTodayLogic(@NonNull String dateString) {
         Calendar calendar = Calendar.getInstance();
@@ -63,5 +56,20 @@ public final class StringUtils {
         return date.substring(0, 2) +
                 SLASH +
                 date.substring(2, 4);
+    }
+
+
+    @NonNull
+    public static String changeNullByEmptyString(@Nullable String chain) {
+        return chain == null ? NULL_STRING : chain;
+    }@NonNull
+    public static String addZeroToStart(int number) {
+        String formatNumber;
+        if (number < INT_TEN) {
+            formatNumber = ZERO_STRING + number;
+        } else {
+            formatNumber = number + NULL_STRING;
+        }
+        return formatNumber;
     }
 }
