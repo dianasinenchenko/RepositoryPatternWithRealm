@@ -17,6 +17,7 @@ public final class StringUtils {
         return nulll == null ? NULL_STRING : nulll;
     }
 
+
     public static boolean isEmpty(@Nullable String text) {
         return text == null || text.isEmpty();
     }
