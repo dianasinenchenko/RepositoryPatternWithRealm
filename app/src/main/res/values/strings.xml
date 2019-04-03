@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">RepositoryPatternWithRealm</string>
+
+    <string name="create_marker">Create</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="fields_not_null">empty</string>
+    <string name="created_marker_message">Marker added</string>
+
+
 </resources>
