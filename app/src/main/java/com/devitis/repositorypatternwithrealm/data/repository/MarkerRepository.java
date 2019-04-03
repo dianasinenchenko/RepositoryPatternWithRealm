@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Diana on 02.04.2019.
  */
 
-public class MarkerRepositori implements IMainRepository {
+public class MarkerRepository implements IMainRepository {
 
 
     @Override

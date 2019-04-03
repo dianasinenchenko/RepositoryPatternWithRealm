@@ -12,6 +12,8 @@ import io.realm.annotations.PrimaryKey;
 public class RealmMarker extends RealmObject {
 
     public static final String PK = "id";
+    public static final String NAME = "name";
+
 
     @PrimaryKey
     private int id;
