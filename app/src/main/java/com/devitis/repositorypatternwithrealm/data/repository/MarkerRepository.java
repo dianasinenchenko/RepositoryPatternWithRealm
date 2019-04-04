@@ -27,7 +27,7 @@ public class MarkerRepository implements IMainRepository {
     private IMarkerDataSource dataSource;
     private RealmModelMarkerConverter converter;
 
-    public MarkerRepository(@NonNull IMarkerDataSource dataSource, @NonNull RealmModelMarkerConverter converter) {
+    public MarkerRepository(@NonNull  final IMarkerDataSource dataSource, @NonNull final RealmModelMarkerConverter converter) {
         this.dataSource = dataSource;
         this.converter = converter;
     }
@@ -47,11 +47,11 @@ public class MarkerRepository implements IMainRepository {
     public List<Marker> getMarkers() {
 
         List<Marker> list;
-        Realm realm = Realm.getDefaultInstance();
-        list = new ArrayList<>();
-        RealmResults<RealmMarker> realmMarkerList = dataSource.getMarkers(realm);
-        transformRealResultsToList(realmMarkerList, list);
-
+        try (Realm realm = Realm.getDefaultInstance()) {
+            list = new ArrayList<>();
+            RealmResults<RealmMarker> realmMarkerList = dataSource.getMarkers(realm);
+            transformRealResultsToList(realmMarkerList, list);
+        }
         return list;
     }
 
@@ -60,9 +60,9 @@ public class MarkerRepository implements IMainRepository {
     public Marker getMarkerById(final int id) {
 
         Marker marker;
-        Realm realm = Realm.getDefaultInstance();
-        marker = converter.realmMarkerToMarker(dataSource.getMarkerById(realm, id));
-
+        try (Realm realm = Realm.getDefaultInstance()) {
+            marker = converter.realmMarkerToMarker(dataSource.getMarkerById(realm, id));
+        }
         return marker;
     }
 
@@ -71,58 +71,36 @@ public class MarkerRepository implements IMainRepository {
     public List<Marker> getMarkerByName(@NonNull final String name) {
 
         List<Marker> list;
-        Realm realm = Realm.getDefaultInstance();
-        list = new ArrayList<>();
-        RealmResults<RealmMarker> realmMarkerListByName = dataSource.getMarkerByName(realm, name);
-        transformRealResultsToList(realmMarkerListByName, list);
-
+        try (Realm realm = Realm.getDefaultInstance()) {
+            list = new ArrayList<>();
+            RealmResults<RealmMarker> realmMarkerListByName = dataSource.getMarkerByName(realm, name);
+            transformRealResultsToList(realmMarkerListByName, list);
+        }
         return list;
     }
 
 
-//    @Override
-//    public List<Marker> getMarkerByEndDate(@NonNull final String endDate) {
-//
-//        List<Marker> list;
-//        Realm realm = Realm.getDefaultInstance();
-//        list = new ArrayList<>();
-//        RealmResults<RealmMarker> realmMarkerListByEndDate = dataSource.getMarkerByEndDate(realm, endDate);
-//        transformRealResultsToList(realmMarkerListByEndDate, list);
-//
-//        return list;
-//    }
-
-//    @Override
-//    public List<Marker> getMarkerByLocation(@NonNull final String location) {
-//
-//        List<Marker> list;
-//        Realm realm = Realm.getDefaultInstance();
-//        list = new ArrayList<>();
-//        RealmResults<RealmMarker> realmMarkerListByLocation = dataSource.getMarkerByLocation(realm, location);
-//        transformRealResultsToList(realmMarkerListByLocation, list);
-//
-//        return list;
-//    }
-
     @Override
     public void createMarker(@NonNull final Marker marker) {
 
-        Realm realm = Realm.getDefaultInstance();
-        dataSource.createMarker(realm, converter.markerToRealmMarker(marker));
+        try (Realm realm = Realm.getDefaultInstance()) {
+            dataSource.createMarker(realm, converter.markerToRealmMarker(marker));
+        }
     }
 
     @Override
     public void updateMarker(@NonNull final Marker marker) {
 
-        Realm realm = Realm.getDefaultInstance();
-        dataSource.updateMarker(realm, converter.markerToRealmMarker(marker));
-
+        try (Realm realm = Realm.getDefaultInstance()) {
+            dataSource.updateMarker(realm, converter.markerToRealmMarker(marker));
+        }
     }
 
     @Override
     public void deleteMarkerById(int markerId) {
 
-        Realm realm = Realm.getDefaultInstance();
-        dataSource.deleteMarkerById(realm, markerId);
+        try (Realm realm = Realm.getDefaultInstance()) {
+            dataSource.deleteMarkerById(realm, markerId);
+        }
     }
 }

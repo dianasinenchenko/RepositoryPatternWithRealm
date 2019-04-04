@@ -34,12 +34,13 @@ public class DetailView extends ActivityView<DetailActivity> {
 
     @BindView(R.id.edit_marker_name)
     EditText markerName;
+
     @BindView(R.id.txt_date_add)
     TextView textDateAdd;
-//    @BindView(R.id.txt_date_end)
-//    TextView textDateEnd;
+
     @BindView(R.id.edit_marker_location)
     EditText markerLocation;
+
     @BindView(R.id.btn_edit_and_save)
     Button buttonEditAndSave;
     @BindView(R.id.btn_delete)
@@ -61,7 +62,6 @@ public class DetailView extends ActivityView<DetailActivity> {
         markerName.setText(StringUtils.changeNullByEmptyString(currentMarker.getName()));
         markerLocation.setText(getCollectionFirstItemText(currentMarker.getLocation(), currentMarker));
         textDateAdd.setText(StringUtils.changeNullByEmptyString(currentMarker.getDateAdd()));
-//        textDateEnd.setText(StringUtils.changeNullByEmptyString(currentMarker.getDateEnd()));
         setEnabled(false);
     }
 
@@ -70,27 +70,20 @@ public class DetailView extends ActivityView<DetailActivity> {
         markerName.setEnabled(enabled);
         markerLocation.setEnabled(enabled);
         textDateAdd.setEnabled(enabled);
-//        textDateEnd.setEnabled(enabled);
         buttonChangeDate.setEnabled(enabled);
     }
 
     @Nullable
     public Marker createMarkerFromViews() {
+
         Marker marker = null;
-
         String markerNameText = markerName.getText().toString();
-//        String markerLocationText = markerLocation.getText().toString();
 
-        if (!StringUtils.isEmpty(markerNameText)
-
-//                &&
-//                !StringUtils.isEmpty(markerLocationText)
-                ) {
+        if (!StringUtils.isEmpty(markerNameText)) {
 
             marker = new Marker();
             marker.setName(markerNameText);
             marker.setDateAdd(textDateAdd.getText().toString());
-//            marker.setDateEnd(textDateEnd.getText().toString());
 
             List<String> location = new ArrayList<>();
             location.add(markerLocation.getText().toString());
@@ -124,10 +117,6 @@ public class DetailView extends ActivityView<DetailActivity> {
         }
     }
 
-//    public void setDateEnd(@NonNull String dateEnd) {
-//
-//        textDateEnd.setText(dateEnd);
-//    }
 
     public void setDateAdd(@NonNull String dateAdd) {
 

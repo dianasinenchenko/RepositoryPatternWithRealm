@@ -28,6 +28,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
     public static Intent getIntent(final AppCompatActivity activity, int markerId) {
+
         Intent intent = new Intent(activity, DetailActivity.class);
         intent.putExtra(EXTRA_MARKER_ID, markerId);
         return intent;
@@ -35,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
@@ -42,6 +44,7 @@ public class DetailActivity extends AppCompatActivity {
         if (intent == null || !intent.hasExtra(EXTRA_MARKER_ID)) {
             return;
         }
+
         IMainRepository repository = new MarkerRepository(new MarkerDataSource(RealmMarker.class), new RealmModelMarkerConverter());
         presenter = new DetailPresenter(repository, new DetailView(this), intent.getIntExtra(EXTRA_MARKER_ID, -1));
         presenter.init();

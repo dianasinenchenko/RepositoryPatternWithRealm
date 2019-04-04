@@ -29,6 +29,7 @@ public class DetailPresenter {
     }
 
     public void init() {
+
         currentMarker = repository.getMarkerById(markerId);
         if (currentMarker != null) {
             view.setMarkerData(currentMarker);
@@ -36,6 +37,7 @@ public class DetailPresenter {
     }
 
     private void decideIfCreateMarker() {
+
         if (!isFirstTime && !isEditable) {
             currentMarker = view.createMarkerFromViews();
             if (currentMarker != null) {
@@ -76,11 +78,6 @@ public class DetailPresenter {
 
         view.setDateAdd(StringUtils.formatDateWithTodayLogic(dateAdd));
     }
-
-//    private void setDataEndText(@NonNull String dateEnd) {
-//
-//        view.setDateEnd(StringUtils.formatDateWithTodayLogic(dateEnd));
-//    }
 
 
     public void unSubscribeListeners() {

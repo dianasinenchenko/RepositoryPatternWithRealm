@@ -12,14 +12,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:text="delete" />
+            android:text="@string/delete" />
 
         <Button
             android:id="@+id/btn_edit_and_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="edit" />
+            android:text="@string/edit" />
 
         <EditText
             android:id="@+id/edit_marker_name"
@@ -27,9 +27,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/btn_edit_and_save"
             android:layout_centerHorizontal="true"
-            android:hint="marker name"
+            android:hint="@string/contact_name"
             android:inputType="textPersonName"
             android:textSize="@dimen/text_big" />
+
+
 
         <EditText
             android:id="@+id/edit_marker_location"
@@ -37,10 +39,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/edit_marker_name"
             android:layout_centerHorizontal="true"
-
+            android:hint="@string/address"
             android:inputType="textPersonName"
             android:textSize="@dimen/text_big" />
-
 
 
 
@@ -57,20 +58,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="date add" />
-
-            <!--<TextView-->
-                <!--android:id="@+id/txt_date_end"-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_weight="1"-->
-                <!--android:text="date end" />-->
+                android:text="@string/birth_date" />
 
             <Button
                 android:id="@+id/btn_change_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="edit" />
+                android:text="@string/edit_date" />
         </LinearLayout>
 
 

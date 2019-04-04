@@ -26,7 +26,6 @@ public class AddMarkerPresenter {
     }
 
 
-
     public void createNewMarker() {
         Marker marker = view.createMarkerFromViews();
         if (marker != null) {
@@ -49,10 +48,6 @@ public class AddMarkerPresenter {
     private void setDateAdd(@NonNull String date) {
         view.setDateAdd(StringUtils.formatDateWithTodayLogic(date));
     }
-
-//    private void setDateEnd(@NonNull String data) {
-//        view.setDateEnd(StringUtils.formatDateWithTodayLogic(data));
-//    }
 
     public void unSubscribeListeners() {
         view.unSubscribeListeners();

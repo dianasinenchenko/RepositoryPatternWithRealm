@@ -29,6 +29,9 @@
             android:name=".ui.add.AddMarkerActivity"
             android:label="detail"
           />
+
+
+
     </application>
 
 

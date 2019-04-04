@@ -14,8 +14,6 @@ public class Marker {
 
     private String dateAdd;
 
-//    private String dateEnd;
-
     private List<String> location;
 
     public int getId() {
@@ -41,14 +39,6 @@ public class Marker {
     public void setDateAdd(String dateAdd) {
         this.dateAdd = dateAdd;
     }
-
-//    public String getDateEnd() {
-//        return dateEnd;
-//    }
-//
-//    public void setDateEnd(String dateEnd) {
-//        this.dateEnd = dateEnd;
-//    }
 
     public List<String> getLocation() {
         return location;

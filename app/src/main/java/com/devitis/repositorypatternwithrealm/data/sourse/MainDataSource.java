@@ -15,7 +15,7 @@ public abstract class MainDataSource<T extends RealmObject> {
 
     private Class<T> tClass;
 
-    public MainDataSource(Class<T> tClass) {
+    MainDataSource(@NonNull  Class<T> tClass) {
         this.tClass = tClass;
     }
 

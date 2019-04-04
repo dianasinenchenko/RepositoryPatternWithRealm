@@ -30,8 +30,6 @@ import io.reactivex.Observer;
 public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, MarkerAdapter.MarkerViewHolder> {
 
 
-    public static final int FIRST_LOCATION = 0;
-
     public MarkerAdapter(Context context) {
 
         super(context);
@@ -64,28 +62,6 @@ public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, Ma
 
             holder.textName.setText(name);
         }
-//
-//        String dateAdd = holder.marker.getDateAdd();
-//        if (!StringUtils.isEmpty(dateAdd)) {
-//
-//            holder.textDateAdd.setText(dateAdd);
-//        }
-
-//        String dateEnd = holder.marker.getDateEnd();
-//        if (!StringUtils.isEmpty(dateEnd)) {
-//
-//            holder.textDateEnd.setText(dateEnd);
-//        }
-
-//        if (!CollectionUtils.isEmpty(holder.marker.getLocation())) {
-//
-//            String location = holder.marker.getLocation().get(FIRST_LOCATION);
-//            if (!StringUtils.isEmpty(location)) {
-//
-//                holder.texLocation.setText(location);
-//            }
-//        }
-
 
     }
 
@@ -94,12 +70,6 @@ public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, Ma
 
         @BindView(R.id.txt_marker_name)
         TextView textName;
-//        @BindView(R.id.txt_marker_date_add)
-//        TextView textDateAdd;
-//        @BindView(R.id.txt_marker_date_end)
-//        TextView textDateEnd;
-//        @BindView(R.id.txt_marker_location)
-//        TextView texLocation;
 
         private Marker marker;
         private WeakReference<Observer<Pair<Marker, Integer>>> observerWeakReference;
@@ -118,20 +88,6 @@ public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, Ma
             }
         }
 
-//        @OnClick(R.id.btn_copy_location)
-//        void onCopyButtonClick() {
-//            if (texLocation != null && getContext() != null) {
-//                String currentLocation = texLocation.getText().toString();
-//                if (!StringUtils.isEmpty(currentLocation)) {
-//                    ClipboardManager clipboard = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-//                    ClipData clip = ClipData.newPlainText("Location", texLocation.getText());
-//                    clipboard.setPrimaryClip(clip);
-//                    Toast.makeText(getContext(), "copied " + texLocation.getText(), Toast.LENGTH_SHORT).show();
-//                } else {
-//                    Toast.makeText(getContext(), "There are not location", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        }
     }
 
 }

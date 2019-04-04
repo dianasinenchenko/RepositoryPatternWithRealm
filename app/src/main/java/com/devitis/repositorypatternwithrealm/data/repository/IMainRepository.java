@@ -18,10 +18,6 @@ public interface IMainRepository {
 
     List<Marker> getMarkerByName(@NonNull String name);
 
-//    List<Marker> getMarkerByEndDate(@NonNull String endDate);
-
-//    List<Marker> getMarkerByLocation(@NonNull String location);
-
     void createMarker(@NonNull Marker marker);
 
     void updateMarker(@NonNull Marker marker);

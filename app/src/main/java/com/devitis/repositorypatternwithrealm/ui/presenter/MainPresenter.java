@@ -28,8 +28,6 @@ public class MainPresenter {
     }
 
 
-
-
     public void init() {
         view.init(new OnItemClick());
     }
@@ -51,6 +49,7 @@ public class MainPresenter {
     }
 
     public void searchMarker(@NonNull CharSequence charSequence) {
+
         List<Marker> markerFromSearch = repository.getMarkerByName(charSequence.toString());
         if (!CollectionUtils.isEmpty(markerFromSearch)) {
             view.addAll(markerFromSearch);

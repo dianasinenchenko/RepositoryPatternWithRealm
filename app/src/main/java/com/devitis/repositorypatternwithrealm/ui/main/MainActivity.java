@@ -28,12 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
         IMainRepository repository = new MarkerRepository(new MarkerDataSource(RealmMarker.class), new RealmModelMarkerConverter());
         presenter = new MainPresenter(repository, new MainView(this));
         presenter.init();
+
         searchText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -66,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     void addMarker() {
         presenter.addMarker();
     }
+
 
     @Override
     public void onBackPressed() {
