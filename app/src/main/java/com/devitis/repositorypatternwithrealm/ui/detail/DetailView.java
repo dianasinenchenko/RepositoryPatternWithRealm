@@ -79,10 +79,12 @@ public class DetailView extends ActivityView<DetailActivity> {
         Marker marker = null;
 
         String markerNameText = markerName.getText().toString();
-        String markerLocationText = markerLocation.getText().toString();
+//        String markerLocationText = markerLocation.getText().toString();
 
-        if (!StringUtils.isEmpty(markerNameText) &&
-                !StringUtils.isEmpty(markerLocationText)
+        if (!StringUtils.isEmpty(markerNameText)
+
+//                &&
+//                !StringUtils.isEmpty(markerLocationText)
                 ) {
 
             marker = new Marker();

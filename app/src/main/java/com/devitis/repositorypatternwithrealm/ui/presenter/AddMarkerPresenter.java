@@ -46,8 +46,8 @@ public class AddMarkerPresenter {
         view.showDatePickerFragment(new OnDateSelected());
     }
 
-    private void setDateAdd(@NonNull String data) {
-        view.setDateAdd(StringUtils.formatDateWithTodayLogic(data));
+    private void setDateAdd(@NonNull String date) {
+        view.setDateAdd(StringUtils.formatDateWithTodayLogic(date));
     }
 
 //    private void setDateEnd(@NonNull String data) {

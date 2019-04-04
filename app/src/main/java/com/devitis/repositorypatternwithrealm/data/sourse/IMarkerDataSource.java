@@ -27,6 +27,6 @@ public interface IMarkerDataSource {
 
 //    RealmResults<RealmMarker> getMarkerByEndDate(@NonNull Realm realm, @NonNull String markerEndDate);
 
-    RealmResults<RealmMarker> getMarkerByLocation(@NonNull Realm realm, @NonNull String markerLocation);
+//    RealmResults<RealmMarker> getMarkerByLocation(@NonNull Realm realm, @NonNull String markerLocation);
 
 }

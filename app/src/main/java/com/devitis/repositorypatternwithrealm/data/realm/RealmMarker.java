@@ -13,9 +13,9 @@ public class RealmMarker extends RealmObject {
 
     public static final String PK = "id";
     public static final String NAME = "name";
-    public static final String DATE_ADD = "dateAdd";
+//    public static final String DATE_ADD = "dateAdd";
 //    public static final String DATE_END = "dateEnd";
-    public static final String LOCATION = "location";
+//    public static final String LOCATION = "location";
 
 
 

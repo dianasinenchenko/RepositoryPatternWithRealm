@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import com.devitis.repositorypatternwithrealm.data.converter.RealmModelMarkerConverter;
 import com.devitis.repositorypatternwithrealm.data.model.Marker;
 import com.devitis.repositorypatternwithrealm.data.realm.RealmMarker;
+import com.devitis.repositorypatternwithrealm.data.sourse.IMarkerDataSource;
 import com.devitis.repositorypatternwithrealm.data.sourse.MarkerDataSource;
 
 import java.util.ArrayList;
@@ -23,10 +24,10 @@ import io.realm.RealmResults;
 public class MarkerRepository implements IMainRepository {
 
 
-    private MarkerDataSource dataSource;
+    private IMarkerDataSource dataSource;
     private RealmModelMarkerConverter converter;
 
-    public MarkerRepository(@NonNull MarkerDataSource dataSource, @NonNull RealmModelMarkerConverter converter) {
+    public MarkerRepository(@NonNull IMarkerDataSource dataSource, @NonNull RealmModelMarkerConverter converter) {
         this.dataSource = dataSource;
         this.converter = converter;
     }
@@ -91,17 +92,17 @@ public class MarkerRepository implements IMainRepository {
 //        return list;
 //    }
 
-    @Override
-    public List<Marker> getMarkerByLocation(@NonNull final String location) {
-
-        List<Marker> list;
-        Realm realm = Realm.getDefaultInstance();
-        list = new ArrayList<>();
-        RealmResults<RealmMarker> realmMarkerListByLocation = dataSource.getMarkerByLocation(realm, location);
-        transformRealResultsToList(realmMarkerListByLocation, list);
-
-        return list;
-    }
+//    @Override
+//    public List<Marker> getMarkerByLocation(@NonNull final String location) {
+//
+//        List<Marker> list;
+//        Realm realm = Realm.getDefaultInstance();
+//        list = new ArrayList<>();
+//        RealmResults<RealmMarker> realmMarkerListByLocation = dataSource.getMarkerByLocation(realm, location);
+//        transformRealResultsToList(realmMarkerListByLocation, list);
+//
+//        return list;
+//    }
 
     @Override
     public void createMarker(@NonNull final Marker marker) {
@@ -122,6 +123,6 @@ public class MarkerRepository implements IMainRepository {
     public void deleteMarkerById(int markerId) {
 
         Realm realm = Realm.getDefaultInstance();
-        dataSource.deleteById(realm, markerId);
+        dataSource.deleteMarkerById(realm, markerId);
     }
 }

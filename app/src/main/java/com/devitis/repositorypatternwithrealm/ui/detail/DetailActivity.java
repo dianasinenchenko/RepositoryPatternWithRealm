@@ -27,9 +27,9 @@ public class DetailActivity extends AppCompatActivity {
 
 
 
-    public static Intent getIntent(final AppCompatActivity activity, int contactId) {
+    public static Intent getIntent(final AppCompatActivity activity, int markerId) {
         Intent intent = new Intent(activity, DetailActivity.class);
-        intent.putExtra(EXTRA_MARKER_ID, contactId);
+        intent.putExtra(EXTRA_MARKER_ID, markerId);
         return intent;
     }
 

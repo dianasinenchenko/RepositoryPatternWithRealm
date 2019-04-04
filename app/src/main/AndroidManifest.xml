@@ -10,6 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,12 +23,12 @@
         <activity
             android:name=".ui.detail.DetailActivity"
             android:label="detail"
-            android:theme="@style/AppTheme"/>
+          />
 
         <activity
             android:name=".ui.add.AddMarkerActivity"
             android:label="detail"
-            android:theme="@style/AppTheme"/>
+          />
     </application>
 
 

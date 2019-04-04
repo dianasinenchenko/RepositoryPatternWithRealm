@@ -72,7 +72,7 @@ public class DetailPresenter {
     }
 
 
-    private void setDataAddText(@NonNull String dateAdd) {
+    private void setDataAdd(@NonNull String dateAdd) {
 
         view.setDateAdd(StringUtils.formatDateWithTodayLogic(dateAdd));
     }
@@ -93,7 +93,7 @@ public class DetailPresenter {
         @Override
         public void onNext(String date) {
             if (date != null) {
-                setDataAddText(date);
+                setDataAdd(date);
             }
         }
 

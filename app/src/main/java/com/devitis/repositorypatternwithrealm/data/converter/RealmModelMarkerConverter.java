@@ -20,8 +20,8 @@ public class RealmModelMarkerConverter extends MainRealmModelConverter {
         if (realmMarker != null) {
             marker = new Marker();
             marker.setId(realmMarker.getId());
-            marker.setName(StringUtils.changeNullToNullString(realmMarker.getName()));
-            marker.setDateAdd(StringUtils.changeNullToNullString(realmMarker.getDateAdd()));
+            marker.setName(StringUtils.changeNullByEmptyString(realmMarker.getName()));
+            marker.setDateAdd(StringUtils.changeNullByEmptyString(realmMarker.getDateAdd()));
 //            marker.setDateEnd(StringUtils.changeNullToNullString(realmMarker.getDateEnd()));
             marker.setLocation(realmListToList(realmMarker.getLocations()));
         }
@@ -33,8 +33,8 @@ public class RealmModelMarkerConverter extends MainRealmModelConverter {
         RealmMarker realmMarker = null;
         if (marker != null) {
             realmMarker.setId(marker.getId());
-            realmMarker.setName(StringUtils.changeNullToNullString(marker.getName()));
-            realmMarker.setDateAdd(StringUtils.changeNullToNullString(marker.getDateAdd()));
+            realmMarker.setName(StringUtils.changeNullByEmptyString(marker.getName()));
+            realmMarker.setDateAdd(StringUtils.changeNullByEmptyString(marker.getDateAdd()));
 //            realmMarker.setDateEnd(StringUtils.changeNullToNullString(marker.getDateEnd()));
             realmMarker.setLocations(listToRealmList(marker.getLocation()));
         }

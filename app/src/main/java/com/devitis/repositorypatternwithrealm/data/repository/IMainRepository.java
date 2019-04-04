@@ -20,7 +20,7 @@ public interface IMainRepository {
 
 //    List<Marker> getMarkerByEndDate(@NonNull String endDate);
 
-    List<Marker> getMarkerByLocation(@NonNull String location);
+//    List<Marker> getMarkerByLocation(@NonNull String location);
 
     void createMarker(@NonNull Marker marker);
 
