@@ -32,10 +32,10 @@ public class AddMarkerView extends ActivityView<AddMarkerActivity> {
 
     @BindView(R.id.edit_marker_name)
     EditText markerName;
-    @BindView(R.id.edit_marker_date_add)
-    EditText markerDateAdd;
-    @BindView(R.id.edit_marker_date_end)
-    EditText markerDateEnd;
+//    @BindView(R.id.edit_marker_date_add)
+//    EditText markerDateAdd;
+//    @BindView(R.id.edit_marker_date_end)
+//    EditText markerDateEnd;
     @BindView(R.id.edit_marker_location)
     EditText markerLocation;
     @BindView(R.id.btn_edit_and_save)
@@ -44,8 +44,8 @@ public class AddMarkerView extends ActivityView<AddMarkerActivity> {
     Button buttonDelete;
     @BindView(R.id.txt_date_add)
     TextView textDateAdd;
-    @BindView(R.id.txt_date_end)
-    TextView textDateEnd;
+//    @BindView(R.id.txt_date_end)
+//    TextView textDateEnd;
 
     private DatePickerFragment datePickerFragment;
 
@@ -68,7 +68,7 @@ public class AddMarkerView extends ActivityView<AddMarkerActivity> {
             marker = new Marker();
             marker.setName(markerNameText);
             marker.setDateAdd(textDateAdd.getText().toString());
-            marker.setDateEnd(textDateEnd.getText().toString());
+//            marker.setDateEnd(textDateEnd.getText().toString());
 
 
             List<String> location = new ArrayList<>();
@@ -85,9 +85,9 @@ public class AddMarkerView extends ActivityView<AddMarkerActivity> {
         textDateAdd.setText(dateAdd);
     }
 
-    public void setDateEnd(@NonNull String dateEnd) {
-        textDateAdd.setText(dateEnd);
-    }
+//    public void setDateEnd(@NonNull String dateEnd) {
+//        textDateAdd.setText(dateEnd);
+//    }
 
 
     public void setButtonName() {

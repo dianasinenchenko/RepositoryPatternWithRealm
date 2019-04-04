@@ -29,21 +29,11 @@ public class AddMarkerActivity extends AppCompatActivity {
 
     private AddMarkerPresenter presenter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_marker);
-        ButterKnife.bind(this);
-        MarkerRepository repository = new MarkerRepository(new MarkerDataSource(RealmMarker.class), new RealmModelMarkerConverter());
-        presenter = new AddMarkerPresenter(repository, new AddMarkerView(this));
-        presenter.init();
-    }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_contact);
         ButterKnife.bind(this);
         IMainRepository repository = new MarkerRepository(new MarkerDataSource(RealmMarker.class), new RealmModelMarkerConverter());
         presenter = new AddMarkerPresenter(repository, new AddMarkerView(this));

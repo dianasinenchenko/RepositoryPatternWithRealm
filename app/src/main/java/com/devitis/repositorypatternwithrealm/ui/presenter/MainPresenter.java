@@ -29,6 +29,7 @@ public class MainPresenter {
 
 
 
+
     public void init() {
         view.init(new OnItemClick());
     }

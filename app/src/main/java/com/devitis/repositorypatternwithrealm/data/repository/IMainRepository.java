@@ -18,7 +18,7 @@ public interface IMainRepository {
 
     List<Marker> getMarkerByName(@NonNull String name);
 
-    List<Marker> getMarkerByEndDate(@NonNull String endDate);
+//    List<Marker> getMarkerByEndDate(@NonNull String endDate);
 
     List<Marker> getMarkerByLocation(@NonNull String location);
 

@@ -32,9 +32,9 @@ public class MarkerRepository implements IMainRepository {
     }
 
     @Nullable
-    private List<Marker> transformRealResultsToList(@Nullable final RealmResults<RealmMarker> realmContactList, @NonNull List<Marker> list) {
-        if (realmContactList != null) {
-            for (RealmMarker realmMarker : realmContactList) {
+    private List<Marker> transformRealResultsToList(@Nullable final RealmResults<RealmMarker> realmMarkerList, @NonNull List<Marker> list) {
+        if (realmMarkerList != null) {
+            for (RealmMarker realmMarker : realmMarkerList) {
                 list.add(converter.realmMarkerToMarker(realmMarker));
             }
         }
@@ -79,17 +79,17 @@ public class MarkerRepository implements IMainRepository {
     }
 
 
-    @Override
-    public List<Marker> getMarkerByEndDate(@NonNull final String endDate) {
-
-        List<Marker> list;
-        Realm realm = Realm.getDefaultInstance();
-        list = new ArrayList<>();
-        RealmResults<RealmMarker> realmMarkerListByEndDate = dataSource.getMarkerByEndDate(realm, endDate);
-        transformRealResultsToList(realmMarkerListByEndDate, list);
-
-        return list;
-    }
+//    @Override
+//    public List<Marker> getMarkerByEndDate(@NonNull final String endDate) {
+//
+//        List<Marker> list;
+//        Realm realm = Realm.getDefaultInstance();
+//        list = new ArrayList<>();
+//        RealmResults<RealmMarker> realmMarkerListByEndDate = dataSource.getMarkerByEndDate(realm, endDate);
+//        transformRealResultsToList(realmMarkerListByEndDate, list);
+//
+//        return list;
+//    }
 
     @Override
     public List<Marker> getMarkerByLocation(@NonNull final String location) {

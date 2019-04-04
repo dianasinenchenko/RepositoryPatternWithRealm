@@ -13,6 +13,10 @@ public class RealmMarker extends RealmObject {
 
     public static final String PK = "id";
     public static final String NAME = "name";
+    public static final String DATE_ADD = "dateAdd";
+//    public static final String DATE_END = "dateEnd";
+    public static final String LOCATION = "location";
+
 
 
     @PrimaryKey
@@ -22,7 +26,7 @@ public class RealmMarker extends RealmObject {
 
     private String dateAdd;
 
-    private String dateEnd;
+//    private String dateEnd;
 
     private RealmList<RealmString> locations;
 
@@ -50,13 +54,13 @@ public class RealmMarker extends RealmObject {
         this.dateAdd = dateAdd;
     }
 
-    public String getDateEnd() {
-        return dateEnd;
-    }
-
-    public void setDateEnd(String dateEnd) {
-        this.dateEnd = dateEnd;
-    }
+//    public String getDateEnd() {
+//        return dateEnd;
+//    }
+//
+//    public void setDateEnd(String dateEnd) {
+//        this.dateEnd = dateEnd;
+//    }
 
     public RealmList<RealmString> getLocations() {
         return locations;

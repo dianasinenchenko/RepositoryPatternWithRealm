@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import com.devitis.repositorypatternwithrealm.R;
 import com.devitis.repositorypatternwithrealm.data.model.Marker;
 import com.devitis.repositorypatternwithrealm.ui.adapter.MarkerAdapter;
+import com.devitis.repositorypatternwithrealm.ui.add.AddMarkerActivity;
+import com.devitis.repositorypatternwithrealm.ui.detail.DetailActivity;
 
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class MainView extends ActivityView<MainActivity> {
     }
 
 
-    public void unsuscribeToAdapter() {
+    public void unSubscribeToAdapter() {
         adapter.unSubscribeToAdapter();
     }
 

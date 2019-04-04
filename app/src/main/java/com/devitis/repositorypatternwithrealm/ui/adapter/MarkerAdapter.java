@@ -71,11 +71,11 @@ public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, Ma
             holder.textDateAdd.setText(dateAdd);
         }
 
-        String dateEnd = holder.marker.getDateEnd();
-        if (!StringUtils.isEmpty(dateEnd)) {
-
-            holder.textDateEnd.setText(dateEnd);
-        }
+//        String dateEnd = holder.marker.getDateEnd();
+//        if (!StringUtils.isEmpty(dateEnd)) {
+//
+//            holder.textDateEnd.setText(dateEnd);
+//        }
 
         if (!CollectionUtils.isEmpty(holder.marker.getLocation())) {
 
@@ -96,8 +96,8 @@ public class MarkerAdapter extends MainAdapter<Marker, Pair<Marker, Integer>, Ma
         TextView textName;
         @BindView(R.id.txt_marker_date_add)
         TextView textDateAdd;
-        @BindView(R.id.txt_marker_date_end)
-        TextView textDateEnd;
+//        @BindView(R.id.txt_marker_date_end)
+//        TextView textDateEnd;
         @BindView(R.id.txt_marker_location)
         TextView texLocation;
 

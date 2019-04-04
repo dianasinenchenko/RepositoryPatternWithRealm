@@ -50,9 +50,9 @@ public class AddMarkerPresenter {
         view.setDateAdd(StringUtils.formatDateWithTodayLogic(data));
     }
 
-    private void setDateEnd(@NonNull String data) {
-        view.setDateEnd(StringUtils.formatDateWithTodayLogic(data));
-    }
+//    private void setDateEnd(@NonNull String data) {
+//        view.setDateEnd(StringUtils.formatDateWithTodayLogic(data));
+//    }
 
     public void unSubscribeListeners() {
         view.unSubscribeListeners();

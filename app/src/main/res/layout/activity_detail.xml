@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="delete" />
+
+        <Button
+            android:id="@+id/btn_edit_and_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="edit" />
+
+        <EditText
+            android:id="@+id/edit_marker_name"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_edit_and_save"
+            android:layout_centerHorizontal="true"
+            android:hint="marker name"
+            android:inputType="textPersonName"
+            android:textSize="@dimen/text_big" />
+
+        <EditText
+            android:id="@+id/edit_marker_location"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_marker_name"
+            android:layout_centerHorizontal="true"
+
+            android:inputType="textPersonName"
+            android:textSize="@dimen/text_big" />
+
+
+
+
+        <LinearLayout
+            android:id="@+id/date_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_marker_location"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_date_add"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="date add" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/txt_date_end"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="date end" />-->
+
+            <Button
+                android:id="@+id/btn_change_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="edit" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</ScrollView>
+
